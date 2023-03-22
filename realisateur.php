@@ -5,9 +5,9 @@ Class Realisateur extends Personne
     private array $filmographie;
 
 
-    public function __constract()
+    public function __construct($nom, $prenom, $sexe, $dateNaissance)
     {
-        parent::__constract();
+        parent::__construct($nom, $prenom, $sexe, $dateNaissance);
         $this->filmographie=[];
     }
     public function addFilm(Film $film)
@@ -15,15 +15,15 @@ Class Realisateur extends Personne
         $this->filmographie[]=$film;
     }
 
-    public function getFilmographie(Realisateur $Rea){
-        foreach($Rea->filmographie as $film){
+    public function getFilmographie(){
+        foreach($this->filmographie as $film){
             echo "$film<br>";
         }
     }
 
     public function __toString()
     {
-        return $this->getPrenom();
+        return $this->getPrenom()."-".$this->getNom();
     }   
 }
 ?>

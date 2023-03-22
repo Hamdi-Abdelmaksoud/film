@@ -10,6 +10,8 @@ Class Casting {
         $this->role=$role;
         $this->acteur=$acteur;
         $this->film->ajouterCasting($this);
+        //addfilm sur acteur
+         $this->acteur->ajouterCasting($this);
        
     }
    

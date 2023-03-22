@@ -16,5 +16,6 @@ $film=new Film('friends','1993',"2h", $realisateur,"***---***",'drame');
 $film=new Film('test','1990',"2h", $realisateur,"***---***",'drame');
 
  $casting1 = new Casting ($film,$role, $acteur);
- $realisateur->getFilmographie($realisateur);
+ $realisateur->getFilmographie();
+ $acteur->getFilms();
 ?>

@@ -22,6 +22,7 @@ class Film{
         $this->castings=[];
         //addFilm sur réalisateur
         $this->realisateur->addFilm($this);
+        
 
     }
 /*********************************get********************************/
