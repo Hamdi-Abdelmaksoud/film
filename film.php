@@ -1,6 +1,4 @@
 <?php
-
-
 class Film{
     private string $titre;
     private string $dateSortie;
@@ -43,30 +41,43 @@ class Film{
         return $this->genre;
     }
     public function getcasting() {
-        return $this->casting;
+        return $this->castings;
     }
     /*********************************set********************************/
-    public function setTitre() {
+    public function setTitre($titre) {
         return $this->titre=$titre;
     }
-    public function setdateSortie() {
+    public function setdateSortie($dateSortie) {
         return $this->dateSortie=$dateSortie;
     }
-    public function setduree() {
+    public function setduree($duree) {
         return $this->duree=$duree;
     }
     
-    public function setresume() {
+    public function setresume($resume) {
         return $this->resume=$resume;
     }
-    public function setgenre() {
+    public function setgenre($genre) {
         return $this->genre=$genre;
     }
-    public function setcasting() {
-        return $this->genre=$casting;
-    }
+    // public function setcasting() {
+    //     return $this->castings=$castings;
+    // }
 /*********************************set********************************/
-    public function __toString()
+// public function Castfilm(Film $film)
+// {
+// foreach($film->castings as $cast)
+
+// {
+// echo'$cast <br> ';
+// }
+// }
+
+
+
+
+/**************************tostring************************/    
+public function __toString()
     {
         return "le titre du film : $this->titre <br> date de sortie : $this->dateSortie la durée : $this->duree  <br> réaliser par  $this->realisateur  <br> resumer : $this->resume ";
     }

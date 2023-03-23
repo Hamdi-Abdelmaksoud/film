@@ -31,17 +31,17 @@ class Personne{
     }
    
     /*********************************set********************************/
-    public function setNom() {
+    public function setNom($nom) {
         return $this->nom=$nom;
     }
-    public function setprenom() {
+    public function setprenom($prenom) {
         return $this->prenom=$prenom;
     }
-    public function setsexe() {
+    public function setsexe($sexe) {
         return $this->sexe=$sexe;
     }
     
-    public function setdateNaissance() {
+    public function setdateNaissance($dateNaissance) {
         return $this->dateNaissance=$dateNaissance;
     }
    
