@@ -1,15 +1,18 @@
 <?php
+
+use LDAP\Result;
+
 class Film{
     private string $titre;
     private string $dateSortie;
     private string $duree;
     private Realisateur $realisateur;
     private string $resume;
-    private string $genre;
+    private Genre $genre;
     private array $castings;
 
     
-    public function __construct(string $titre, int $dateSortie, string $duree, realisateur $realisateur, string $resume,string $genre)
+    public function __construct(string $titre, int $dateSortie, string $duree, realisateur $realisateur, string $resume,Genre $genre)
     {
         $this->titre=$titre;
         $this->dateSortie=$dateSortie;
@@ -20,6 +23,7 @@ class Film{
         $this->castings=[];
         //addFilm sur réalisateur
         $this->realisateur->addFilm($this);
+        $this->genre->ajouterTitreFilm($this->titre);
         
 
     }
@@ -64,14 +68,17 @@ class Film{
     //     return $this->castings=$castings;
     // }
 /*********************************set********************************/
-// public function Castfilm(Film $film)
-// {
-// foreach($film->castings as $cast)
+ public function castFilm() 
+    {
+        $Resultat="<br>Casting du film ".$this->titre.":<br>";
 
-// {
-// echo'$cast <br> ';
-// }
-// }
+        foreach($this->castings as $cast)
+            {
+                $Resultat.=$cast->getRoles().':'.$cast->getActeur()."<br>";   
+            }
+                return $Resultat;
+
+    }
 
 
 
